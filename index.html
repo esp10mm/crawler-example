@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+    <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+    <title>Remark</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      .image {
+        max-width: 400px;
+        height: 350px;
+        background-image: url(./purpose.jpg);
+        background-size: contain; 
+      }
+
+      .image2 {
+        width: 600px;
+        height: 230px;
+        background-image: url(./analysis.jpg);
+        background-size: contain; 
+      }
+
+      .image3 {
+        width: 600px;
+        height: 75px;
+        background-image: url(./page.png);
+        background-size: contain; 
+      }
+	  
+	  .image4 {
+        width: 600px;
+        height: 45px;
+        background-image: url(./url.png);
+        background-size: contain; 
+      }
+	  .image5 {
+        width: 600px;
+        height: 390px;
+        background-image: url(./itembox.png);
+        background-size: contain; 
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" style="display:none;">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+
+# Crawler Sharing
+
+---
+
+# Some JS Basic
+
+---
+layout: false
+.left-column[
+  ## Using module
+]
+.right-column[
+Creating package.json file
+```bash
+npm init
+```
+Installing module and saving to package.json
+
+e.g. installing superagent
+```bash
+npm install --save superagent
+```
+Using module in your program
+```javascript
+const superagent = require('superagent');
+superagent.get('http://www.google.com');
+```
+]
+---
+
+layout: false
+.left-column[
+  ## Using Module
+  ## Function
+]
+.right-column[
+```javascript
+const f = () => {
+  console.log('Hello');
+}
+
+f(); //Hello
+```
+```javascript
+const f = (value) => {
+  console.log(value);
+}
+
+f('Hello MI'); //Hello MI
+```
+```javascript
+const f = (callback) => {
+  callback();
+}
+
+f(() => {
+  console.log('Hello DSP');
+}); //Hello DSP
+```
+]
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+
+# A Simple Crawler
+
+---
+layout: false
+.left-column[
+  ## Target
+]
+.right-column[
+  ### Purpose
+  Download phone price data from [this site](http://id.priceprice.com/harga-hp/) 
+  .image[
+]
+]
+---
+layout: false
+.left-column[
+  ## Target
+]
+.right-column[
+  ### Analysis
+  Data is in the html source !
+  .image2[
+]
+
+]
+---
+layout: false
+.left-column[
+  ## Target
+]
+.right-column[
+  ### Analysis
+  Click the page bar below ...
+  .image3[
+]
+
+  There is page parameter in url !
+  .image4[
+]
+]
+---
+layout: false
+.left-column[
+  ## Target
+  ## Initialization
+]
+.right-column[
+For wrinting our result to file
+```javascript
+const fs = require('fs');
+```
+
+For getting html file from web we need
+[superagent](https://visionmedia.github.io/superagent/)
+```javascript
+const superagent = require('superagent');
+```
+For parsing html we need 
+[cheerio](https://cheerio.js.org/)
+```javascript
+const cheerio = require('cheerio');
+```
+So our main function will be like :
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+  console.log('Hi let\'t get started !');
+};
+
+main(); //Hi let't get started !
+```
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+]
+.right-column[
+Try getting data from first page
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+  superagent.get(
+	'http://id.priceprice.com/harga-hp/?page=1',
+	(err, response) => {
+      const html = response.text;
+	  console.log(html);
+    }
+  );
+};
+
+main(); //<html>...</html>
+```
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+]
+.right-column[
+### Find the part we want
+.image5[
+]
+Seems being in class "itemBoxIn"
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+]
+.right-column[
+### Select all "itemBoxIn" from html with cheerio
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+  superagent.get(
+	'http://id.priceprice.com/harga-hp/?page=1',
+	(err, response) => {
+      const html = response.text;
+	  const selector = cheerio.load(html);
+	  console.log(selector('.itemBoxIn').length);
+    }
+  );
+};
+
+main(); //20
+```
+[Selector reference](https://www.w3schools.com/jquery/jquery_ref_selectors.asp)
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+]
+.right-column[
+### Get phone names from each "itemBoxIn"
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+  superagent.get(
+	'http://id.priceprice.com/harga-hp/?page=1',
+	(err, response) => {
+      const html = response.text;
+	  const selector = cheerio.load(html);
+	  selector('.itemBoxIn').each((index, element) => {
+        const itemName = selector(element).find('.itmName h3').text();
+        console.log(itemName);
+      });
+    }
+  );
+};
+
+main(); //Xiaomi Redmi 4A ....
+```
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+]
+.right-column[
+### Get price too !
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+  superagent.get(
+	'http://id.priceprice.com/harga-hp/?page=1',
+	(err, response) => {
+      const html = response.text;
+	  const selector = cheerio.load(html);
+	  selector('.itemBoxIn').each((index, element) => {
+        const itemName = selector(element).find('.itmName h3').text();
+		const itemPrice = selector(element).find('.price').text();
+        console.log(itemPrice);
+      });
+    }
+  );
+};
+
+main(); //Rp 1.249.000 - Rp ....
+```
+The price format isn't like we expecting
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+]
+.right-column[
+### Purify price data with regex
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+  superagent.get(
+	'http://id.priceprice.com/harga-hp/?page=1',
+	(err, response) => {
+      const html = response.text;
+	  const selector = cheerio.load(html);
+	  selector('.itemBoxIn').each((index, element) => {
+        const itemName = selector(element).find('.itmName h3').text();
+		const itemPrice = selector(element).find('.price').text().match(/[\d.]+/);
+        console.log(itemPrice);
+      });
+    }
+  );
+};
+
+main(); //1.249.000 ....
+```
+[Regex101](https://regex101.com/)
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+  ## Append to file
+]
+.right-column[
+### Write our result to csv file
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+  superagent.get(
+	'http://id.priceprice.com/harga-hp/?page=1',
+	(err, response) => {
+      const html = response.text;
+	  const selector = cheerio.load(html);
+	  selector('.itemBoxIn').each((index, element) => {
+        const itemName = selector(element).find('.itmName h3').text();
+		const itemPrice = selector(element).find('.price').text().match(/[\d.]+/);
+		fs.appendFileSync('price.csv', itemName + ',' + itemPrice + '\n');
+      });
+    }
+  );
+};
+
+main();
+```
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+  ## Append to file
+  ## Apply to all page
+]
+.right-column[
+### Rewrite as function
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+
+  const fetchPage = (page) => {
+    superagent.get('http://id.priceprice.com/harga-hp/?page=' + page, (err, response) => {
+      const html = response.text;
+      const selector = cheerio.load(html);
+
+      selector('.itemBoxIn').each((index, element) => {
+        const itemName = selector(element).find('.itmName h3').text();
+        const itemPrice = selector(element).find('.price').text().match(/[\d.]+/)
+        fs.appendFileSync('price.csv', itemName + ',' + itemPrice + '\n');
+      });
+
+    });
+  };
+
+  fetchPage(1);
+};
+
+main();
+```
+]
+---
+layout: false
+.left-column[
+  ## Claim Module
+  ## Initialization
+  ## Get Data
+  ## Refining
+  ## Append to file
+  ## Apply to all page
+]
+.right-column[
+### Recursive !!
+```javascript
+const fs = require('fs');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
+const main = () => {
+
+  const fetchPage = (page) => {
+    superagent.get('http://id.priceprice.com/harga-hp/?page=' + page, (err, response) => {
+      const html = response.text;
+      const selector = cheerio.load(html);
+
+      selector('.itemBoxIn').each((index, element) => {
+        const itemName = selector(element).find('.itmName h3').text();
+        const itemPrice = selector(element).find('.price').text().match(/[\d.]+/)
+        fs.appendFileSync('price.csv', itemName + ',' + itemPrice + '\n');
+      });
+	  
+	  if (page < 143) {
+        fetchPage(page + 1);
+      }
+
+    });
+  };
+
+  fetchPage(1);
+};
+
+main();
+```
+]
+    </textarea>
+    <script src="./remark-latest.min.js"></script>
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="./remark.language.js"></script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark',
+          highlightLines: true
+        }) ;
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-44561333-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.scripts[0];
+        s.parentNode.insertBefore(ga, s);
+      }());
+    </script>
+  </body>
+</html>
